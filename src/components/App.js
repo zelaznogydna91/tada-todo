@@ -1,20 +1,10 @@
 import React from 'react'
 
-import PropTypes from 'prop-types'
-import { get, map, sortBy } from 'lodash'
+import { get } from 'lodash'
 import Header from './Header'
-import Order from './Order'
+import Tasks from './Tasks'
 
 import sampleTasks from '../sample-tasks'
-// import base from '../base'
-
-const sortTask = (fa, fb) => {
-  if (fa.status === fb.status) {
-    return 0
-  }
-  return fa.status ? 1 : -1
-}
-
 
 // -----------END--OF--IMPORTS------------------
 
@@ -22,7 +12,6 @@ class App extends React.Component {
   state = {
     tasks: {},
   }
-
 
   componentDidMount() {
     const localStorageRef = localStorage.getItem('todos')
@@ -76,7 +65,6 @@ class App extends React.Component {
     })
   }
 
-
   render() {
     Object.keys(this.state.tasks)
       .filter((taskKey) => !!this.state.tasks[taskKey]) // only non-null props
@@ -85,15 +73,13 @@ class App extends React.Component {
         [taskKey]: this.state.tasks[taskKey],
       }), {})
 
-    // const sortedTodos = map(map(get(this.state, 'tasks', {}), (todo, key) => ({ key, ...todo })).sort(sortTask), (todo) => ({ [todo.key]: { status: todo.status, name: todo.name } }))
-
     const sortedTodos = get(this.state, 'tasks', {})
 
     return (
       <div className={'tada-todo'}>
         <div className={'menu'}>
           <Header tagline={'Procrastination goes poof!'} />
-          <Order
+          <Tasks
             tasks={sortedTodos}
             removeTask={this.removeTask}
             toggleTodoStatus={this.toggleTodoStatus}
