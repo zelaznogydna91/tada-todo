@@ -6,11 +6,11 @@ import PropTypes from 'prop-types'
 const Header = (props) => (
   <header className={'top'}>
     <h1>
-      tada
+      ta
       <span>
         <img className={'logo'} src={'https://i.imgur.com/5b9LX3h.png'} alt={''} />
       </span>
-      todo
+      da!
     </h1>
     <h3 className={'tagline'}>
       <span>

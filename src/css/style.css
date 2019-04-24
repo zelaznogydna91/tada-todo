@@ -1,5 +1,6 @@
 .top .logo {
-  height: 0.9em;
+  height: 1em;
+  margin: 1px 8px 10px;
 }
 
 .task-text {
@@ -176,10 +177,6 @@ h3 {
   align-items: center;
   background: url("images/snape-not-found.gif") center no-repeat;
   background-size: cover;
-}
-
-header.logo {
-  height: 0.5em;
 }
 
 header.top {
