@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-
 // -----------END--OF--IMPORTS------------------
 
 const Header = (props) => (

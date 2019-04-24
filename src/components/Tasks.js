@@ -3,13 +3,14 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import AddTaskForm from './AddTaskForm'
 
-
 // -----------END--OF--IMPORTS------------------
+
 class Tasks extends React.Component {
   static propTypes = {
     removeTask:       PropTypes.func,
     toggleTodoStatus: PropTypes.func,
     tasks:            PropTypes.object,
+    addTask:          PropTypes.func,
   }
 
   renderTasks = (key) => {
@@ -17,7 +18,7 @@ class Tasks extends React.Component {
     const taskTransitionOptions = {
       classNames: 'tasks',
       key,
-      timeout:    { enter: 500, exit: 500 },
+      timeout:    { enter: 500, exit: 400 },
     }
 
     return (
@@ -33,7 +34,7 @@ class Tasks extends React.Component {
               />
               <span className={'task-text'}>{task.name}</span>
             </div>
-            <div>
+            <div className={'delete-task-btn'}>
               <button type={'button'} onClick={() => this.props.removeTask(key)}>
                 <span role={'img'} aria-label={'heavy-multiplication-sign'}>✖️</span>
               </button>
@@ -47,27 +48,23 @@ class Tasks extends React.Component {
   render() {
     const tasks = Object.keys(this.props.tasks)
     const total = Object.values(this.props.tasks).filter((task) => !task.status).length
-    const countTransitionsOptions = {
-      key:        tasks.length,
-      classNames: 'count',
-      timeout:    { enter: 500, exit: 500 },
-    }
     return (
       <div className={'tasks-wrap'}>
-        <div className={'remaining-tasks-message'} style={{ visibility: total > 0 ? 'visible' : 'hidden' }}>
-          <span className={'remaining-tasks-count'}>
-            {total}
-          </span>
-          <span className={'remaining-tasks-text'}>
-            {' remaining tasks'}
-          </span>
+        <div className={'control-bar'}>
+          <div className={'remaining-tasks-message'} style={{ visibility: total > 0 ? 'visible' : 'hidden' }}>
+            <span className={'remaining-tasks-count'}>
+              {total}
+            </span>
+            <span className={'remaining-tasks-text'}>
+              {' remaining tasks'}
+            </span>
+          </div>
+          <AddTaskForm addTask={this.props.addTask} />
         </div>
-        <AddTaskForm addTask={this.props.addTask}/>
-        <TransitionGroup component={'ul'} className={'order'}>
+        <TransitionGroup component={'ul'} className={'tasks'}>
           {tasks.map((key) => this.renderTasks(key))}
         </TransitionGroup>
       </div>
-
     )
   }
 }

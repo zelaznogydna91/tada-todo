@@ -2,43 +2,27 @@
   height: 0.9em;
 }
 
-/* input[type=radio],
-input[type=checkbox] {
-  display: none;
-} */
 .task-text {
-  padding-left: 20px
-}
-.radio label:before {
-  
-  border-radius: 8px;
+  padding-left: 1.5rem
 }
 
-.todo-item .checkbox label:before {
-  content:"x";
-  border-radius: 3px;
+.todo-item .delete-task-btn button {
+  margin: 2px;
+  /* padding: 0 1.2em; */
 }
 
-input[type=radio]:checked {
-  content: "\2022";
-  color: #f3f3f3;
-  font-size: 30px;
-  text-align: center;
-  line-height: 18px;
+.todo-item .delete-task-btn button:hover {
+  transform: scale(1.5) rotate(-90deg)
 }
 
-input[type=checkbox]:checked {
-  content: "[done!]";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-  font-size: 15px;
-  color: #f3f3f3;
-  text-align: center;
-  line-height: 15px;
+.todo-item .delete-task-btn button::after {
+  background: transparent
 }
 
 .todo-item {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .tasks-enter {
@@ -68,12 +52,9 @@ input[type=checkbox]:checked {
   padding: 0;
 }
 
-
-
 @font-face {
   font-family: "haymakerregular";
-  src: url("./fonts/haymaker-webfont.eot");
-  src: url("./fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/haymaker-webfont.woff") format("woff"), url("./fonts/haymaker-webfont.ttf") format("truetype"), url("./fonts/haymaker-webfont.svg#haymakerregular") format("svg");
+  src: url("./fonts/haymaker-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -92,33 +73,8 @@ input[type=checkbox]:checked {
   font-style: normal;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
+footer, header, nav {
   display: block;
-}
-
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-[hidden] {
-  display: none;
 }
 
 html {
@@ -131,8 +87,7 @@ a:focus {
   outline: thin dotted;
 }
 
-a:active,
-a:hover {
+a:active, a:hover {
   outline: 0;
 }
 
@@ -140,115 +95,22 @@ h1 {
   font-size: 2em;
 }
 
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-b,
-strong {
-  font-weight: 700;
-}
-
-dfn {
-  font-style: italic;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-q {
-  quotes: 2 1C 2 1D 2 18 2 19;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-img {
-  border: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0;
-}
-
-button,
-input {
+button, input {
   line-height: normal;
 }
 
-button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
+button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-button[disabled],
-input[disabled] {
+button[disabled], input[disabled] {
   cursor: default;
 }
 
-/* input[type=checkbox],
-input[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-} */
 input[type=search] {
   -webkit-appearance: textfield;
   box-sizing: content-box;
-}
-
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 textarea {
@@ -256,30 +118,13 @@ textarea {
   vertical-align: top;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body,
-figure {
+body, figure {
   margin: 0;
 }
 
-legend,
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
 }
 
 * {
@@ -307,11 +152,7 @@ h1 {
   margin-top: 1.5%;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: 'haymakerregular', sans-serif;
 }
@@ -370,8 +211,7 @@ header.top h3 span {
   padding-right: 1rem;
 }
 
-header.top h3:before,
-header.top h3:after {
+header.top h3:before, header.top h3:after {
   display: block;
   z-index: 1;
   background: #000;
@@ -437,7 +277,7 @@ ul {
   padding: 0;
 }
 
-ul.order li {
+ul.tasks li {
   border-bottom: 1px solid #000;
   padding: 2rem 0;
   display: -webkit-flex;
@@ -449,43 +289,43 @@ ul.order li {
   align-items: center;
 }
 
-ul.order li:hover button {
+ul.tasks li:hover button {
   display: inline;
 }
 
-ul.order li button {
+ul.tasks li button {
   border: 0;
   display: none;
   line-height: 1;
   padding: 0;
 }
 
-ul.order li.total {
+ul.tasks li.total {
   font-weight: 600;
   border-bottom: 3px solid #000;
   border-top: 3px double #000;
 }
 
-ul.order li.unavailable {
+ul.tasks li.unavailable {
   text-decoration: line-through;
   background: #f8d0d2;
 }
 
-ul.order li .price {
+ul.tasks li .price {
   font-size: 1.2rem;
 }
 
-ul.order li span.count {
+ul.tasks li span.count {
   position: relative;
   overflow: hidden;
   float: left;
 }
 
-ul.order li span.count span {
+ul.tasks li span.count span {
   display: block;
 }
 
-.order-title {
+.tasks-title {
   text-align: center;
 }
 
@@ -499,9 +339,7 @@ ul.order li span.count span {
   flex-wrap: wrap;
 }
 
-.task-edit input,
-.task-edit textarea,
-.task-edit select {
+.task-edit input, .task-edit textarea, .task-edit select {
   width: 33.33%;
   padding: 10px;
   line-height: 1;
@@ -516,11 +354,9 @@ ul.order li span.count span {
   background: #fff;
 }
 
-.task-edit input:focus,
-.task-edit textarea:focus,
-.task-edit select:focus {
+.task-edit input:focus, .task-edit textarea:focus, .task-edit select:focus {
   outline: 0;
-  background: #fef2de;
+  background: #E1F2DA;
 }
 
 .task-edit textarea {
@@ -536,20 +372,33 @@ ul.order li span.count span {
   border: 0;
 }
 
-
-.menu {
+.tadaWindow {
   margin: 0 calc(100vw/4);
   min-width: 500px;
   overflow-x: hidden;
-
 }
 
-.menu ::-webkit-scrollbar {
+.tadaWindow button {
+  width: 100%;
+  float: left;
+}
+
+.tadaWindow .sample-controls {
+  width: 50% !important;
+  float: left !important;
+}
+
+.tadaWindow::-webkit-scrollbar {
   display: none;
 }
 
-button,
-input[type=submit] {
+.control-bar {
+  position: sticky;
+  top: -20px;
+  background: white;
+}
+
+button, input[type=submit] {
   text-transform: uppercase;
   background: none;
   border: 1px solid #000;
@@ -561,142 +410,28 @@ input[type=submit] {
   z-index: 2;
 }
 
-button[disabled],
-input[type=submit][disabled] {
-  color: #d12028;
-  background: #fff;
-  border-color: #d12028;
-  -webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
-  transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
-}
-
-button[disabled]:hover,
-input[type=submit][disabled]:hover {
-  color: #d12028;
-  cursor: not-allowed;
-}
-
-button[disabled]:after,
-input[type=submit][disabled]:after {
-  display: none;
-}
-
-button:after,
-input[type=submit]:after {
+button:after, input[type=submit]:after {
   content: '';
   z-index: -1;
   display: block;
-  background: #000;
+  background: #215732;
   position: absolute;
   width: 100%;
   height: 0;
   left: 0;
   top: 0;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 
-button:hover,
-input[type=submit]:hover,
-button:focus,
-input[type=submit]:focus {
+button:hover, input[type=submit]:hover, button:focus, input[type=submit]:focus {
   color: #fff;
   outline: 0;
 }
 
-button:hover:after,
-input[type=submit]:hover:after,
-button:focus:after,
-input[type=submit]:focus:after {
+button:hover:after, input[type=submit]:hover:after, button:focus:after, input[type=submit]:focus:after {
   height: 100%;
-}
-
-button.warning:after,
-input[type=submit].warning:after {
-  background: #d12028;
-}
-
-button.success:after,
-input[type=submit].success:after {
-  background: #2dc22d;
-}
-
-button.github,
-input[type=submit].github,
-button.facebook,
-input[type=submit].facebook,
-button.twitter,
-input[type=submit].twitter {
-  border: 0;
-  display: block;
-  margin-bottom: 2rem;
-  width: 100%;
-  color: #fff;
-  padding: 2rem;
-}
-
-button.github,
-input[type=submit].github {
-  background: #82d465;
-}
-
-button.github:after,
-input[type=submit].github:after {
-  background: #5cc437;
-}
-
-button.facebook,
-input[type=submit].facebook {
-  background: #3864a3;
-}
-
-button.facebook:after,
-input[type=submit].facebook:after {
-  background: #2d5082;
-}
-
-button.twitter,
-input[type=submit].twitter {
-  background: #5ea9dd;
-}
-
-button.twitter:after,
-input[type=submit].twitter:after {
-  background: #2c8dd0;
-}
-
-.store-selector {
-  background: #fff;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 2rem;
-  border: 2px solid #000;
-}
-
-.store-selector input,
-.store-selector button {
-  width: 100%;
-}
-
-.store-selector input[type="text"],
-.store-selector button[type="text"] {
-  text-align: center;
-  font-size: 3rem;
 }
 
 input[type="checkbox"]+label {
   color: #000;
-}
-
-input[type="checkbox"]+label span {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  margin: -2px 10px 0 0;
-  vertical-align: middle;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked+label span {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
 }

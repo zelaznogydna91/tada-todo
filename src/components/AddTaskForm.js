@@ -3,8 +3,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
 
+// -----------END--OF--IMPORTS------------------
+
 class AddTaskForm extends React.Component {
   nameRef = React.createRef() // eslint-disable-next-line lines-between-class-members
+
+  static propTypes = {
+    addTask: PropTypes.func,
+  }
 
   createTask = (event) => {
     event.preventDefault()
@@ -18,14 +24,13 @@ class AddTaskForm extends React.Component {
     event.currentTarget.reset()
   }
 
-
   render() {
     return (
       <form className={'task-edit'} onSubmit={this.createTask} autoComplete={'off'}>
         <input name={'task-text'} ref={this.nameRef} type={'text'} placeholder={'create a new task...'} />
         <button disabled={!this.createTask} type={'submit'}>
-          <span role={'img'} aria-label={'heavy-addition-sign'}>
-            ➕
+          <span role={'img'} aria-label={'heavy-addition-sign'} style={{ 'font-size': '2rem' }}>
+            +
           </span>
         </button>
       </form>

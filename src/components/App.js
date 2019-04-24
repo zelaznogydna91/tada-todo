@@ -14,24 +14,38 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const localStorageRef = localStorage.getItem('todos')
+    const localStorageRef = localStorage.getItem('allTasks')
 
     if (localStorageRef) {
       this.setState({ tasks: JSON.parse(localStorageRef) })
     }
+
+    window.addEventListener('scroll', this.handleScroll, true)
   }
 
   componentDidUpdate() {
-    localStorage.setItem('todos', JSON.stringify(this.state.tasks))
+    localStorage.setItem('allTasks', JSON.stringify(this.state.tasks))
   }
+
+  handleScroll = () => {
+    const controlBar = document.getElementsByClassName('control-bar')[0]
+    const menu = document.getElementsByClassName('tada-todo')[0]
+
+    const sticky = controlBar.offsetTop
+
+    if (menu.offsetTop >= sticky) {
+      controlBar.classList.add('sticky')
+    } else {
+      controlBar.classList.remove('sticky')
+    }
+  }
+
 
   addTask = (task) => {
     this.setState((prev) => {
-      const tasks = { ...prev.tasks }
+      const newTasks = { [`task${Date.now()}`]: task, ...prev.tasks }
 
-      tasks[`task${Date.now()}`] = task
-
-      return { tasks }
+      return { tasks: newTasks }
     })
   }
 
@@ -60,9 +74,14 @@ class App extends React.Component {
   })
 
   loadSampleTasks = () => {
-    console.log(sampleTasks)
     this.setState({
       tasks: sampleTasks,
+    })
+  }
+
+  deleteSampleTasks = () => {
+    this.setState({
+      tasks: {},
     })
   }
 
@@ -78,8 +97,10 @@ class App extends React.Component {
 
     return (
       <div className={'tada-todo'}>
-        <div className={'menu'}>
+        <div className={'tadaWindow'}>
           <Header tagline={'Procrastination goes poof!'} />
+          <button className={'sample-controls'} type={'button'} onClick={this.loadSampleTasks}>Load Samples</button>
+          <button className={'sample-controls'} type={'button'} onClick={this.deleteSampleTasks}>Delete All</button>
           <Tasks
             tasks={sortedTodos}
             removeTask={this.removeTask}
@@ -87,7 +108,6 @@ class App extends React.Component {
             loadSampleTasks={this.loadSampleTasks}
             addTask={this.addTask}
           />
-          <button type={'button'} onClick={this.loadSampleTasks}>Load Samples</button>
         </div>
       </div>
     )
