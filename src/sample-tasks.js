@@ -1,52 +1,52 @@
 // This is just some sample data so you don't have to think of your own!
 const tasks = {
-  task1: {
-    task: 'Get 1 can pure pumpkin',
-    completed: false
+  task0: {
+    name:   'Get 1 can pure pumpkin',
+    status: false,
   },
   task1: {
-    task: 'Get 1/4 cup brown sugar',
-    completed: false
+    name:   'Get 1/4 cup brown sugar',
+    status: false,
   },
 
   task2: {
-    task: 'Get 1 teaspoon nutmeg',
-    completed: false
+    name:   'Get 1 teaspoon nutmeg',
+    status: false,
   },
 
   task3: {
-    task: 'Get 1 teaspoon cinnamon',
-    completed: false
+    name:   'Get 1 teaspoon cinnamon',
+    status: false,
   },
 
   task4: {
-    task: 'Get 1/2 teaspoon cloves',
-    completed: false
+    name:   'Get 1/2 teaspoon cloves',
+    status: false,
   },
 
   task5: {
-    task: 'Get pinch salt',
-    completed: false
+    name:   'Get pinch salt',
+    status: false,
   },
 
   task6: {
-    task: 'Get water, for sealing pastry',
-    completed: false
+    name:   'Get water, for sealing pastry',
+    status: false,
   },
 
   task7: {
-    task: 'Get 1 tablespoon water + 1 egg, beaten',
-    completed: false
+    name:   'Get 1 tablespoon water + 1 egg, beaten',
+    status: false,
   },
 
   task8: {
-    task: 'Get 4 tablespoons powdered sugar',
-    completed: false
+    name:   'Get 4 tablespoons powdered sugar',
+    status: false,
   },
 
   task9: {
-    task: 'Get 2 tablespoons milk',
-    completed: false
+    name:   'Get 2 tablespoons milk',
+    status: false,
   },
 }
 

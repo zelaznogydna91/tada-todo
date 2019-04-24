@@ -7,9 +7,9 @@ import AddTaskForm from './AddTaskForm'
 // -----------END--OF--IMPORTS------------------
 class Tasks extends React.Component {
   static propTypes = {
-    removeTask: PropTypes.func,
+    removeTask:       PropTypes.func,
     toggleTodoStatus: PropTypes.func,
-    tasks: PropTypes.array,
+    tasks:            PropTypes.object,
   }
 
   renderTasks = (key) => {
@@ -17,7 +17,7 @@ class Tasks extends React.Component {
     const taskTransitionOptions = {
       classNames: 'tasks',
       key,
-      timeout: { enter: 500, exit: 500 },
+      timeout:    { enter: 500, exit: 500 },
     }
 
     return (
@@ -25,8 +25,13 @@ class Tasks extends React.Component {
         <li key={key}>
           <div className={'todo-item'}>
             <div>
-              <input type={'checkbox'} checked={task.status} onChange={() => this.props.toggleTodoStatus(key)} />
-              {task.name}
+              <input
+                value={task.status}
+                type={'checkbox'}
+                checked={task.status}
+                onChange={() => this.props.toggleTodoStatus(key)}
+              />
+              <span className={'task-text'}>{task.name}</span>
             </div>
             <div>
               <button type={'button'} onClick={() => this.props.removeTask(key)}>
@@ -41,16 +46,30 @@ class Tasks extends React.Component {
 
   render() {
     const tasks = Object.keys(this.props.tasks)
+    const total = Object.values(this.props.tasks).filter((task) => !task.status).length
     const countTransitionsOptions = {
-      key: tasks.length,
+      key:        tasks.length,
       classNames: 'count',
-      timeout: { enter: 500, exit: 500 },
+      timeout:    { enter: 500, exit: 500 },
     }
     return (
       <div className={'tasks-wrap'}>
-        <div className={'remaining-tasks-message'}>
+        {/* {
+          tasks.length > 0 && (
+            <div className={'remaining-tasks-message'} style={{ visibility: 'hidden' }}>
+              <span className={'remaining-tasks-count'}>
+                {tasks.length}
+              </span>
+              <span className={'remaining-tasks-text'}>
+                {' remaining tasks'}
+              </span>
+            </div>
+          )
+        } */}
+        <button type={'button'} onClick={this.props.loadSampleTasks}>Load Samples</button>
+        <div className={'remaining-tasks-message'} style={{ visibility: total > 0 ? 'visible' : 'hidden' }}>
           <span className={'remaining-tasks-count'}>
-            {tasks.length}
+            {total}
           </span>
           <span className={'remaining-tasks-text'}>
             {' remaining tasks'}

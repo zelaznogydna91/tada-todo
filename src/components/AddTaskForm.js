@@ -5,11 +5,12 @@ import get from 'lodash/get'
 
 class AddTaskForm extends React.Component {
   nameRef = React.createRef() // eslint-disable-next-line lines-between-class-members
-  
+
   createTask = (event) => {
     event.preventDefault()
     const task = {
-      name: get(this.nameRef, 'current.value'),
+      name:   get(this.nameRef, 'current.value'),
+      status: false,
     }
     // Calling addTask from APP.js two levels deep
     if (task.name) this.props.addTask(task)

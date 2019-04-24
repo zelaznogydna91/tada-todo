@@ -2,11 +2,13 @@
   height: 0.9em;
 }
 
-input[type=radio],
+/* input[type=radio],
 input[type=checkbox] {
   display: none;
+} */
+.task-text {
+  padding-left: 20px
 }
-
 .radio label:before {
   
   border-radius: 8px;

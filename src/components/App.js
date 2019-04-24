@@ -60,6 +60,7 @@ class App extends React.Component {
   })
 
   loadSampleTasks = () => {
+    console.log(sampleTasks)
     this.setState({
       tasks: sampleTasks,
     })
@@ -78,11 +79,18 @@ class App extends React.Component {
     return (
       <div className={'tada-todo'}>
         <div className={'menu'}>
+
+          <label style={{ 'z-index': 1 }} htmlFor={'fold'}>
+            Fold
+            <input type={'checkbox'} id={'fold'} />
+          </label>
+
           <Header tagline={'Procrastination goes poof!'} />
           <Tasks
             tasks={sortedTodos}
             removeTask={this.removeTask}
             toggleTodoStatus={this.toggleTodoStatus}
+            loadSampleTasks={this.loadSampleTasks}
             addTask={this.addTask}
           />
         </div>
