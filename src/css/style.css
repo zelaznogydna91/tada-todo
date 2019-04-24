@@ -333,7 +333,7 @@ h3 {
   justify-content: center;
   -webkit-align-items: center;
   align-items: center;
-  background: url("images/notFound.gif") center no-repeat;
+  background: url("images/snape-not-found.gif") center no-repeat;
   background-size: cover;
 }
 
@@ -411,59 +411,6 @@ header.top h3:after {
   transition: all 0.3s;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   overflow: scroll;
-}
-
-.tada-todo>*:first-child {
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: 50%;
-  flex-basis: 50%;
-  -webkit-transform: translateX(50%) rotateY(6deg) translateX(-50%);
-  transform: translateX(50%) rotateY(6deg) translateX(-50%);
-}
-
-.tada-todo>*:nth-child(2) {
-  -webkit-transform: translateX(-50%) rotateY(-14deg) translateX(50%);
-  transform: translateX(-50%) rotateY(-14deg) translateX(50%);
-  border-left: 0;
-  border-right: 0;
-  min-width: 300px;
-}
-
-.tada-todo>*:last-child {
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-  -webkit-flex-basis: 50%;
-  flex-basis: 50%;
-  -webkit-transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
-  transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
-}
-
-input#fold:not(:checked)~#main .tada-todo>* {
-  -webkit-transform: none;
-  transform: none;
-}
-
-label[for="fold"] {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  background: #000;
-  color: #fff;
-  border: 2px solid #000;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-}
-
-input#fold {
-  display: none;
-}
-
-input#fold:checked+label {
-  background: #fff;
-  color: #000;
 }
 
 .remaining-tasks-message {
@@ -589,14 +536,6 @@ ul.order li span.count span {
   border: 0;
 }
 
-.list-of-fish {
-  border-top: 2px solid #000;
-  border-bottom: 1px solid #000;
-  padding-top: 5px;
-  margin-top: 2rem;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
 
 .menu {
   margin: 0 calc(100vw/4);
@@ -607,43 +546,6 @@ ul.order li span.count span {
 
 .menu ::-webkit-scrollbar {
   display: none;
-}
-
-.menu-fish {
-  border-bottom: 2px solid #000;
-  border-top: 1px solid #000;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-  margin-bottom: 5px;
-  clear: both;
-  overflow: hidden;
-}
-
-.menu-fish p {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.menu-fish .fish-name {
-  margin: 0;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.menu-fish .price {
-  font-size: 1.4rem;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-
-.menu-fish img {
-  float: left;
-  width: 150px;
-  margin-right: 1rem;
 }
 
 button,

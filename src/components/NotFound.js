@@ -19,7 +19,7 @@ const NotFound = () => (
     </h2>
     <div style={{ textAlign: 'center', fontSize: '8rem' }}>
       <span role={'img'} aria-label={'woman-shruggin'}>🧙🏻‍♂️</span>
-      <span role={'img'} aria-label={'fishing-pole-and-fish'}>⚡</span>
+      <span role={'img'} aria-label={'lightning'}>⚡</span>
       <span role={'img'} aria-label={'question'}>❓</span>
     </div>
   </div>

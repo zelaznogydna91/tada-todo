@@ -54,19 +54,6 @@ class Tasks extends React.Component {
     }
     return (
       <div className={'tasks-wrap'}>
-        {/* {
-          tasks.length > 0 && (
-            <div className={'remaining-tasks-message'} style={{ visibility: 'hidden' }}>
-              <span className={'remaining-tasks-count'}>
-                {tasks.length}
-              </span>
-              <span className={'remaining-tasks-text'}>
-                {' remaining tasks'}
-              </span>
-            </div>
-          )
-        } */}
-        <button type={'button'} onClick={this.props.loadSampleTasks}>Load Samples</button>
         <div className={'remaining-tasks-message'} style={{ visibility: total > 0 ? 'visible' : 'hidden' }}>
           <span className={'remaining-tasks-count'}>
             {total}
@@ -75,7 +62,7 @@ class Tasks extends React.Component {
             {' remaining tasks'}
           </span>
         </div>
-        <AddTaskForm addTask={this.props.addTask} />
+        <AddTaskForm addTask={this.props.addTask}/>
         <TransitionGroup component={'ul'} className={'order'}>
           {tasks.map((key) => this.renderTasks(key))}
         </TransitionGroup>

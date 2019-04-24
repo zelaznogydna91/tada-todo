@@ -79,12 +79,6 @@ class App extends React.Component {
     return (
       <div className={'tada-todo'}>
         <div className={'menu'}>
-
-          <label style={{ 'z-index': 1 }} htmlFor={'fold'}>
-            Fold
-            <input type={'checkbox'} id={'fold'} />
-          </label>
-
           <Header tagline={'Procrastination goes poof!'} />
           <Tasks
             tasks={sortedTodos}
@@ -93,6 +87,7 @@ class App extends React.Component {
             loadSampleTasks={this.loadSampleTasks}
             addTask={this.addTask}
           />
+          <button type={'button'} onClick={this.loadSampleTasks}>Load Samples</button>
         </div>
       </div>
     )
