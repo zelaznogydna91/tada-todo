@@ -1,13 +1,11 @@
+<img src="https://i.imgur.com/Uus5ME9.png" alt="A merge between React and Node Logos with a checkmark at its center" width="100%">
+
 # Tada! To-Do
 A to-do list focused on simplicity using React and Node.
 
 ## Try it yourself
 
 https://tada-todo-mtsshxtafp.now.sh/tada-todo
-
-<img src="https://i.imgur.com/Uus5ME9.png" alt="A merge between React and Node Logos with a checkmark at its center" width="100%">
-
-
 
 ## Available Scripts
 
