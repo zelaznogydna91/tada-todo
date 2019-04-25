@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/Uus5ME9.png" alt="A merge between React and Node Logos with a checkmark at its center" width="100%">
+<img src="https://i.imgur.com/Uus5ME9.png" alt="A merge between React and Node Logos with a checkmark at its center" width="40%" align="right">
 
 # Tada! To-Do
 A to-do list focused on simplicity using React and Node.
