@@ -5,7 +5,7 @@ A to-do list focused on simplicity using React and Node.
 
 https://tada-todo-mtsshxtafp.now.sh/tada-todo
 
-![alt text](https://i.imgur.com/Uus5ME9.png | width=100 "A merge between React and Node Logos with a checkmark at its center")
+![alt text](https://i.imgur.com/Uus5ME9.png =100x100 "A merge between React and Node Logos with a checkmark at its center")
 
 ## Available Scripts
 
