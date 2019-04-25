@@ -7,6 +7,8 @@ https://tada-todo-mtsshxtafp.now.sh/tada-todo
 
 ![alt text](https://i.imgur.com/Uus5ME9.png =100x100 "A merge between React and Node Logos with a checkmark at its center")
 
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+
 ## Available Scripts
 
 ### `npm start`
