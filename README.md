@@ -4,8 +4,11 @@
 A to-do list focused on simplicity using React and Node.
 
 ## Try it yourself
+[404]: http://bit.ly/tada-todo-notfound
+[app]: https://bit.ly/tada-todo
 
-https://bit.ly/tada-todo
+Here's the [app]<br>
+and a funny [404] for the app :)
 
 ## Available Scripts
 
