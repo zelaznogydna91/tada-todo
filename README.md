@@ -5,7 +5,7 @@ A to-do list focused on simplicity using React and Node.
 
 ## Try it yourself
 
-https://tada-todo-mtsshxtafp.now.sh/tada-todo
+https://bit.ly/tada-todo
 
 ## Available Scripts
 
