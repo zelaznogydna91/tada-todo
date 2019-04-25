@@ -1,17 +1,15 @@
-# base image
-FROM node:9.6.1
+# Stage 1 - the build process
+FROM node:10.15-alpine as build-deps
+WORKDIR /src
+COPY package.json package-lock.json nginx.conf ./
 
-# set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+RUN npm install
+COPY . ./
+RUN npm run build
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-RUN npm install --silent
-RUN npm install react-scripts@1.1.1 -g --silent
-
-# start app
-CMD ["npm", "start"]
+# Stage 2 - the production environment
+FROM nginx:1.15-alpine
+COPY --from=build-deps /src/build /var/www
+COPY --from=build-deps /src/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
