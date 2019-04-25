@@ -7,8 +7,6 @@ A to-do list focused on simplicity using React and Node.
 
 https://tada-todo-mtsshxtafp.now.sh/tada-todo
 
-![](https://giant.gfycat.com/PhonyElatedIcelandichorse.webm)
-
 ## Available Scripts
 
 ### `npm start`
