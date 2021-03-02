@@ -6,8 +6,8 @@ A to-do list focused on simplicity using React and Node.
 ## Try it yourself
 *Zeit's Now (serverless deployment) is intermittently down, the link should work inconsistently as they deal with an issue on their servers. In the meantime you can clone the git repo and follow directions below to run it.*
 
-[404]: http://bit.ly/tada-todo-notfound
-[app]: https://bit.ly/tada-todo
+[404]: https://tada-todo.vercel.app/notfound
+[app]: https://tada-todo-2gyva8quf-zelaznogydna.vercel.app/tada-todo
 
 Here's the [app]<br>
 and a funny [404] for the app :)
